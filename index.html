@@ -5,7 +5,8 @@
     <title>Taki Game</title>
     <link href="StyleSheet.css" rel="stylesheet" />
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
     <script>
         // @colors represents the color types.
         // @types represents the card types.
@@ -165,7 +166,7 @@
             str += '<img src="' + tableDeck[tableDeck.length - 1].image + '"/>' + '</div><div id="player2" class="turn">';
             str += player2.renderWOclick();
             str += '<h3 class="font">Computer</h3> </div> <div id="color" class="center"></div> <br>';
-            str += '<br><div class ="center"> <hr><input type ="button" value="Home page" onclick="homePage()"> <br><br> <input type ="button" value="New game" onclick="newGame()"> </div>';
+            str += '<br><div class ="center"> <hr><button class="btn-3" onclick="homePage()"><span>Home Page</span></button> <br><br> <button class="btn-3" onclick="newGame()"><span>New game</span></button> </div>';
             document.getElementById("Deck").innerHTML = str;
         }
 
@@ -207,8 +208,8 @@
                 array.forEach(clearTimeout);
             }
             boolStart = false;
-            document.getElementById("Deck").innerHTML = '<div class="center"><h1>Welcome to our Taki game!</h1> <img class="big" src="images/taki.jpg"/> <br> <p class="font">(You got a frame? It' + "'" + 's your turn!) </p><br><br><input type="button" value="Previous game" onclick="previousGame()"></div>';
-            document.getElementById("Deck").innerHTML += '<br><div class = "center"><input type="button" value="New game" onclick="newGame()"> </div>';
+            document.getElementById("Deck").innerHTML = '<div class="center"><h1>Welcome to our Taki game!</h1> <img class="big" src="images/taki.jpg"/> <br> <p class="font">(You got a frame? It' + "'" + 's your turn!) </p><br><br><button class="btn-3" onclick="previousGame()"><span>Previous game</span></button></div>';
+            document.getElementById("Deck").innerHTML += '<br><div class = "center"><button class="btn-3" onclick="newGame()"><span>New game</span></button></div>';
             return;
         }
 
@@ -685,7 +686,7 @@
 
     </script>
 </head>
-<body onload="start()">
+<body class="bg-dark text-white" onload="start()">
     <div id="Deck"></div>
 </body>
 </html>
